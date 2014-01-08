@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Model-View-Controller: Programmatic Creation</title>
+</head>
+<body>
+  <h1>Model-View-Controller: Programmatic Creation</h1>
+
+  <div id="shipFilterer"></div>
+
+  <script src="../lib/jquery-2.0.3.min.js"></script>
+  <script src="with-json.js"></script>
+  <script>
+    var filterer = new ShipFilterer([
+      {
+       name: 'USS Berlin',
+       registry: 'NCC-14232',
+       shipClass: 'Excelsior'
+      },
+      {
+       name: 'USS Challenger',
+       registry: 'NCC-71099',
+       shipClass: 'Galaxy'
+      },
+      {
+        name: 'USS Charleston',
+        registry: 'NCC-42285',
+        shipClass: 'Excelsior'
+      },
+      {
+        name: 'USS Constellation',
+        registry: 'NCC-1017',
+        shipClass: 'Constitution'
+      },
+      {
+        name: 'USS Enterprise',
+        registry: 'NCC-1701',
+        shipClass: 'Constitution'
+      },
+      {
+        name: 'USS Enterprise',
+        registry: 'NCC-1701-D',
+        shipClass: 'Galaxy'
+      },
+      {
+        name: 'USS Galaxy',
+        registry: 'NCC-70637',
+        shipClass: 'Galaxy'
+      },
+      {
+        name: 'USS Odyssey',
+        registry: 'NCC-71832',
+        shipClass: 'Galaxy'
+      }
+    ])
+
+    filterer.$el.appendTo('body')
+
+    // Or better yet, a real API call:
+    //   $.get('api/ships', function (ships) {
+    //     var filterer = new ShipFilterer(ships)
+    //     filterer.$el.appendTo('body')
+    //   })
+  </script>
+</body>
+</html>

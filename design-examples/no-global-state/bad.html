@@ -1,0 +1,41 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Global State: BAD</title>
+</head>
+<body>
+  <h1>Global State: BAD</h1>
+
+  <div>
+    Show class:
+    <select id="ship-class-select">
+      <option>All</option>
+      <option>Constitution</option>
+      <option>Excelsior</option>
+      <option>Galaxy</option>
+    </select>
+  </div>
+
+  <table id="ships">
+    <thead>
+      <tr><th>Ship Name</th><th>Registry</th><th>Class</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>USS Berlin</td><td>NCC-14232</td><td class="ship-class">Excelsior</td></tr>
+      <tr><td>USS Challenger</td><td>NCC-71099</td><td class="ship-class">Galaxy</td></tr>
+      <tr><td>USS Charleston</td><td>NCC-42285</td><td class="ship-class">Excelsior</td></tr>
+      <tr><td>USS Constellation</td><td>NCC-1017</td><td class="ship-class">Constitution</td></tr>
+      <tr><td>USS Enterprise</td><td>NCC-1701</td><td class="ship-class">Constitution</td></tr>
+      <tr><td>USS Enterprise</td><td>NCC-1701-D</td><td class="ship-class">Galaxy</td></tr>
+      <tr><td>USS Galaxy</td><td>NCC-70637</td><td class="ship-class">Galaxy</td></tr>
+      <tr><td>USS Odyssey</td><td>NCC-71832</td><td class="ship-class">Galaxy</td></tr>
+    </tbody>
+  </table>
+
+  <script src="../lib/jquery-2.0.3.min.js"></script>
+  <script src="bad.js"></script>
+  <script>
+    $('#ship-class-select').change(onShipClassChange)
+  </script>
+</body>
+</html>

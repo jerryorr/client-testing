@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="lib/mocha-1.18.2.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="lib/jquery-2.0.3.min.js"></script>
+  <script src="lib/mocha-1.18.2.js"></script>
+  <script src="lib/chai-1.8.1.js"></script>
+  <script src="confirm-requirements.js"></script>
+  <script src="global-leak.js"></script>
+  <script src="async-function.js"></script>
+  <script>mocha.setup('bdd')</script>
+  <script src="confirm-requirements-test.js"></script>
+  <script src="failed-regression-test.js"></script>
+  <script src="cross-browser-test.js"></script>
+  <script src="chai-assert-examples.js"></script>
+  <script src="chai-expect-examples.js"></script>
+  <script src="chai-should-examples.js"></script>
+  <script src="global-leak-test.js"></script>
+  <script src="async-function-test.js"></script>
+  <script src="before-after-hooks-test.js"></script>
+  <script>
+    chai.Assertion.includeStack = true
+
+    mocha.checkLeaks();
+    mocha.globals(['jQuery*']);
+    if (window.mochaPhantomJS) {
+      mochaPhantomJS.run()
+    }
+    else {
+      mocha.run()
+    }
+  </script>
+</body>
+</html>
